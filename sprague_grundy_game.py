@@ -26,3 +26,35 @@ class SpragueGrundyGame:
             self.grundy[position] = self.mex(position)
         
             
+    def play(self):
+        position = self.n
+        player = 1
+        moves = []
+
+        print(f"Gracz 1 rozpoczyna grę z {self.n} elementami na stosie, w jednym ruchu możliwe jest wyciągniecię s elementów,\
+        gdzie s należy do S = {self.s}")
+
+        while position > 0:
+            print(f"Liczba elementów na stosie: {position}, ruch gracza {player}.")
+            val = int(input("Wybierz ile elementów zabrać:"))
+            if val > position or val not in self.s:
+                print("Nieprawidłowy ruch! Spróbuj ponownie.")
+                continue
+
+            moves.append((player, position, val))
+            position -= val
+            player = 3 - player
+
+        winner = 3 - player
+        print(f"Gracz {winner} wygrywa!")
+
+        print("Analiza ruchów:")
+
+        for move in moves:
+            p, pos, mv = move
+            new_pos = pos - mv
+            optimal = "OPTYMALNY" if self.grundy[new_pos] == 0 else "NIEOPTYMALNY"
+            print(f"Gracz {p} przeszedł z {pos} do {new_pos} ({optimal})")
+        print(self.grundy)
+
+
