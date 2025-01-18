@@ -41,9 +41,8 @@ class PeriodicityAnalysis:
         
         period = self.find_period()
         if period is None:
-            return None  # Jeśli nie znaleziono okresu
+            return None
         
-        # Szukamy, gdzie zaczyna się powtarzający się okres
         preperiod_length = 0
         for i in range(n - period):
             if grundy_values[i] == grundy_values[i + period]:

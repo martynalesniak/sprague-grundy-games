@@ -2,9 +2,12 @@ class SpragueGrundyGame:
     def __init__(self, S, game_type, n):
         self.s = S #set
         self.game_type = game_type
+        if game_type == "allbut":
+            self.s = set(range(n+1)) - S
+        else:
+            self.s = S
         self.n = n 
         self.grundy = [0]*(n+1)
-
         self.calculate_grundy()
 
     # najmniejsza liczba ktora nie wystepuje w zbiorze
