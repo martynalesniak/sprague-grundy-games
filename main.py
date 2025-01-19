@@ -1,6 +1,6 @@
 from sprague_grundy_game import SpragueGrundyGame
 
-class Main:
+class GameRunner:
     def __init__(self, S, game_type, n):
         self.game = SpragueGrundyGame(S, game_type, n)
     
@@ -9,8 +9,8 @@ class Main:
 
 
 if __name__ == "__main__":
-    S = {3}
+    S = {3,5,6}
     n = 10
     game_type = "subtraction"  
-    main_game = Main(S, game_type, n)
-    main_game.start_game()
+    game = GameRunner(S, game_type, n)
+    game.start_game()

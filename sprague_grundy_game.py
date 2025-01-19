@@ -35,6 +35,8 @@ class SpragueGrundyGame:
         gdzie s należy do S = {self.s}")
 
         while position > 0:
+            if position < min(self.s):
+                break
             print(f"Liczba elementów na stosie: {position}, ruch gracza {player}.")
             val = int(input("Wybierz ile elementów zabrać:"))
             if val > position or val not in self.s:
