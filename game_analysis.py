@@ -25,4 +25,4 @@ if __name__ == '__main__':
     game_analysis.analyze_game("subtraction")
 
     # #ALLBUT
-    # game_analysis.analyze_game("allbut")
+    game_analysis.analyze_game("allbut")

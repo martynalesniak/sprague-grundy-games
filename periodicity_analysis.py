@@ -16,7 +16,7 @@ class PeriodicityAnalysis:
                         break
                 if is_periodic:
                     return start, period
-        return None
+        return None, None
 
 
     def find_arithmetic_period(self):
@@ -33,7 +33,7 @@ class PeriodicityAnalysis:
                         break
                 if is_arithmetic:
                     return start, period, saltus
-        return None
+        return None, None, None
 
 
 
